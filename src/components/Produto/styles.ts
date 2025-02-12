@@ -1,10 +1,22 @@
 import styled from 'styled-components'
-
 import { cores } from '../../styles'
 
-export const Produto = styled.div``
+// Verifica se cores está definido para evitar erro
+const corPrincipal = cores?.corPrincipal || '#000'
+const corSecundaria = cores?.corSecundaria || '#444'
 
-export const Titulo = styled.h3``
+export const Produto = styled.div`
+  padding: 16px;
+  background-color: #222;
+  border-radius: 8px;
+  text-align: center;
+`
+
+export const Titulo = styled.h3`
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 8px;
+`
 
 export const Capa = styled.div`
   position: relative;
@@ -13,6 +25,7 @@ export const Capa = styled.div`
     display: block;
     width: 100%;
     margin-bottom: 8px;
+    border-radius: 4px;
   }
 `
 
@@ -29,11 +42,12 @@ export const Prices = styled.div`
 
   strong {
     font-size: 18px;
+    font-weight: bold;
   }
 `
 
 export const Tag = styled.span`
-  background-color: ${cores.corPrincipal};
+  background-color: ${corPrincipal};
   position: absolute;
   top: 8px;
   left: 8px;
@@ -41,31 +55,31 @@ export const Tag = styled.span`
   font-size: 12px;
   font-weight: 700;
   color: #fff;
+  border-radius: 4px;
 `
+
 export const Plataformas = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  margin: 8px 0 0;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
 
   li {
-    background-color: ${cores.corPrincipal};
+    background-color: ${corPrincipal};
     padding: 8px;
-    font-size: 10px;
+    font-size: 12px;
     white-space: nowrap;
-    margin-right: 8px;
-    margin-bottom: 8px;
     color: #fff;
     font-weight: bold;
+    border-radius: 4px;
   }
 `
+
 export const BtnComprar = styled.button`
   display: block;
   width: 100%;
-  background-image: linear-gradient(
-    45deg,
-    ${cores.corPrincipal},
-    ${cores.corSecundaria}
-  );
+  background-image: linear-gradient(45deg, ${corPrincipal}, ${corSecundaria});
   font-weight: bold;
   font-size: 16px;
   padding: 12px 0;
@@ -74,12 +88,14 @@ export const BtnComprar = styled.button`
   border: none;
   cursor: pointer;
   border-radius: 4px;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     background-image: linear-gradient(
       -45deg,
-      ${cores.corPrincipal},
-      ${cores.corSecundaria}
+      ${corPrincipal},
+      ${corSecundaria}
     );
+    transform: scale(1.05);
   }
 `

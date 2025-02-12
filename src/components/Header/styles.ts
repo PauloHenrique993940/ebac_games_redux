@@ -7,6 +7,7 @@ export const Header = styled.header`
     ${cores.corPrincipal},
     ${cores.corSecundaria}
   );
+
   margin: 80px 0;
   padding: 16px 24px;
   display: flex;
@@ -21,6 +22,7 @@ export const Header = styled.header`
   div {
     display: flex;
     align-items: center;
+
     img {
       width: 18px;
       margin-right: 8px;

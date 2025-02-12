@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-
 export const cores = {
   corTexto: '#eee',
   corFundo: '#121714',
